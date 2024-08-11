@@ -14,9 +14,9 @@ var romeToArab map[string]int = map[string]int{
 	"III":  3,
 	"IV":   4,
 	"V":    5,
-	"VII":  6,
-	"VIII": 7,
-	"IIX":  8,
+	"VI":   6,
+	"VII":  7,
+	"VIII": 8,
 	"IX":   9,
 	"X":    10,
 }
@@ -57,6 +57,11 @@ func main() {
 		line, _ := reader.ReadString('\n')
 		line = strings.TrimSpace(line)
 		parts := strings.Split(line, " ")
+
+		// Проверка количества входных данных: два операнда и один оператор
+		if len(parts) > 3 {
+			panic("Неверное количество входных данных!")
+		}
 
 		// Валидация ввода
 		val1, isRomeVal1 := toInt(parts[0])
