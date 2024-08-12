@@ -107,6 +107,9 @@ func main() {
 			}
 		case "/":
 			if isRomeVal1 {
+				if val1/val2 < 1 {
+					panic("Выражение в римском формате и результат меньше единицы!")
+				}
 				fmt.Println(toRome(val1 / val2))
 			} else {
 				fmt.Println(val1 / val2)
